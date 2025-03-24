@@ -24,26 +24,11 @@ const mappedFruits = fruits.map(fruit => fruit.toUpperCase() + "!");
 console.log(mappedFruits);
 
 const people = [
-  {
-    name: "Stefano",
-    kudos: 1000,
-  },
-  {
-    name: "Davide",
-    kudos: 3000,
-  },
-  {
-    name: "Paolo",
-    kudos: 20,
-  },
-  {
-    name: "Mauro",
-    kudos: 1,
-  },
-  {
-    name: "Valeria",
-    kudos: 500,
-  },
+  { name: "Stefano", kudos: 1000 },
+  { name: "Davide", kudos: 3000 },
+  { name: "Paolo", kudos: 20 },
+  { name: "Mauro", kudos: 1 },
+  { name: "Valeria", kudos: 500 },
 ];
 
 const peopleNames = people.map(obj => obj.name);
