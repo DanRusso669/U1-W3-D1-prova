@@ -42,3 +42,43 @@ console.log(peopleNames);
 // il filter vuole che sia ritornato o true o false
 const filteredElements = fruits.filter(fruit => fruit.length >= 5);
 console.log(filteredElements);
+
+// REDUCE
+// il reduce serve sempre a ciclare un array e ridurne i valor in un SINGOLO VALORE DI RITORNO
+
+// array.reduce((accumulatore, elemento corrente) => [operazione da svolgere], [valore iniziale di partenza])
+const numArr = [14, 0, 140, 2, 55];
+
+const reduced = numArr.reduce((accumulator, currentValue) => {
+  console.log("ACCUMULATORE", accumulator);
+  console.log("CURRENT VALUE", currentValue);
+  return accumulator + currentValue;
+}, 0); //Questo numero dopo la virgola si chiama INIZIAL VALUE e permette all'accumulatore di iniziare con un parametro a nostra scelta.
+// Se non inseriamo niente, l'accumulatore prendere come valore il primo elemento dell'array
+
+console.log(reduced);
+console.log("___________________________________________________");
+
+const reducedPeople = people.reduce((accumulator, currentValue) => {
+  console.log("ACCUMULATORE", accumulator);
+  console.log("CURRENT VALUE", currentValue.kudos);
+
+  return accumulator + currentValue.kudos;
+  // il valore dopo la virgola è il secondo argomento del reduce e rappresenta un "initialValue" ovvero il valore iniziale del nostro accumulator
+}, 0);
+
+console.log(reducedPeople);
+
+console.log("___________________________________________________");
+
+const reducedNames = peopleNames.reduce((accumulator, currentValue) => {
+  return accumulator + " " + currentValue;
+}, "");
+
+console.log(reducedNames);
+
+console.log("___________________________________________________");
+
+const reducedNamesArray = people.reduce((accumulator, currentValue) => {
+  return accumulator.concat(currentValue.name);
+}, []);
